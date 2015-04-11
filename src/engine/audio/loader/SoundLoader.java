@@ -1,15 +1,14 @@
 package engine.audio.loader;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
+import java.util.UUID;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
-import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 
 import engine.audio.util.Sound;
@@ -43,6 +42,7 @@ public class SoundLoader {
 
 	public static class SoundInfo {
 		private URL file;
+		private UUID uid;
 		private AudioInputStream in;
 		private AudioFormat format;
 		private Clip clip;
@@ -53,6 +53,7 @@ public class SoundLoader {
 			format = in.getFormat();
 			clip = (Clip) AudioSystem.getLine(new DataLine.Info(Clip.class,
 					format));
+			uid = UUID.randomUUID();
 		}
 
 		public Clip getAudio() {
@@ -65,6 +66,10 @@ public class SoundLoader {
 
 		public String getFile() {
 			return file.toString();
+		}
+
+		public UUID getUUID() {
+			return uid;
 		}
 	}
 }
