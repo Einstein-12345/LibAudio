@@ -14,3 +14,7 @@ LibAudio is:
 A simple wrapper around JavaSound
 100% Free/Opensource
 
+What LibAudio is going to be:
+An Audio System
+A LADSPA Plugin interface
+
