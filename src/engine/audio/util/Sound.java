@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import javax.sound.sampled.LineListener;
 
+import engine.audio.events.AbstractListener;
 import engine.audio.loader.SoundLoader;
 import engine.audio.loader.SoundLoader.SoundInfo;
 
@@ -31,8 +32,9 @@ public class Sound {
 		info.getAudio().setMicrosecondPosition(ms);
 	}
 
-	public void addLineListener(LineListener l) {
-		info.getAudio().addLineListener(l);
+	public void addEventListener(AbstractListener al) {
+		info.getAudio().addLineListener(al);
+		al.listenTo(this);
 	}
 
 	public UUID getUUID() {
