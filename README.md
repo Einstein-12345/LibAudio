@@ -12,7 +12,7 @@ A decoder
 
 LibAudio is:
 A simple wrapper around JavaSound
-100% Free/Opensource
+100% Free/Open Source
 
 What LibAudio is going to be:
 An Audio System
